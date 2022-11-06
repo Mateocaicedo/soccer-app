@@ -10,6 +10,7 @@ dependencies:
   http: ^0.13.5
   repository:
     path: "../repository"
+  intl: ^0.17.0
 
 dev_dependencies:
   mocktail: ^0.3.0
