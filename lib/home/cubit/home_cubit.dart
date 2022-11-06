@@ -13,7 +13,7 @@ class HomeCubit extends Cubit<HomeState> {
   Future<void> getLeagues() async {
     emit(state.copyWith(status: HomeStatus.loading));
     try {
-      final leagues = await league.Leagues();
+      final leagues = await league.leagues();
       emit(state.copyWith(status: HomeStatus.success, leagues: leagues));
     } catch (e) {
       emit(state.copyWith(status: HomeStatus.failure));
