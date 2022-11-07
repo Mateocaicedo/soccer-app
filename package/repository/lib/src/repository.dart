@@ -6,6 +6,7 @@
 // https://opensource.org/licenses/MIT.
 // ignore_for_file: public_member_api_docs
 
+import 'package:repository/src/models/fixtures.dart';
 import 'package:repository/src/models/league.dart';
 import 'package:service/service.dart';
 
@@ -25,5 +26,15 @@ class Repository {
     return leagues;
 
   }
+
+
+   Future<List<Fixtures>> fixtures() async {
+
+    final fixtures = await _service.getFixtures();
+
+    return fixtures;
+
+  }
+
 
 }

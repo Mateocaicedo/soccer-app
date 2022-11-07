@@ -20,11 +20,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Page'),
-      ),
-      body: BlocBuilder<HomeCubit, HomeState>(
+    return BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           switch (state.status) {
             case HomeStatus.loading:
@@ -36,10 +32,7 @@ class HomeView extends StatelessWidget {
             case HomeStatus.failure:
               return const Center(child: Text('failed to fetch leagues'));
           }
-
-          
         },
-      ),
-    );
+      );
   }
 }

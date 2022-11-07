@@ -1,17 +1,19 @@
 // Copyright (c) 2022, Very Good Ventures
 // https://verygood.ventures
-// ignore_for_file: public_member_api_docs, avoid_dynamic_calls
+// ignore_for_file: public_member_api_docs, avoid_dynamic_calls, implementation_imports
 
-import 'package:http/http.dart' as http;
-import 'package:intl/intl.dart';
 // Use of this source code is governed by an MIT-style
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
 import 'dart:convert';
+
+import 'package:http/http.dart' as http;
+// ignore: depend_on_referenced_packages
+import 'package:intl/intl.dart';
+import 'package:repository/src/models/fixtures.dart';
 import 'package:repository/src/models/league.dart';
 import 'package:repository/src/models/team.dart';
-import 'package:repository/src/models/fixtures.dart';
 
 /// {@template service}
 /// A Very Good Project created by Very Good CLI.
@@ -91,7 +93,7 @@ class Service {
 
     final now = DateTime.now();
 
-    final to = now.add(const Duration(days: 7));
+    final to = now.add(const Duration(days: 1));
 
     final formatted = DateFormat('yyyy-MM-dd').format(now);
     final formattedTo = DateFormat('yyyy-MM-dd').format(to);  
