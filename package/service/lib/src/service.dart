@@ -55,9 +55,9 @@ class Service {
 
   Future<List<Team>> getTeams() async {
 
-    DateTime now = DateTime.now();
+    final now = DateTime.now();
 
-    DateTime to = now.add(Duration(days: 7));
+    final to = now.add(const Duration(days: 7));
 
     final formatted = DateFormat('yyyy-MM-dd').format(now);
     final formattedTo = DateFormat('yyyy-MM-dd').format(to);  
@@ -99,7 +99,7 @@ class Service {
     final formattedTo = DateFormat('yyyy-MM-dd').format(to);  
 
     // Create the URL
-    final response = await http.get(Uri.parse('$_baseUrl?met=Fixtures&from=$formatted&to=$formattedTo$_apiKey'));
+    final response = await http.get(Uri.parse('$_baseUrl?met=Fixtures&timezone=America/New_York&from=$formatted&to=$formattedTo$_apiKey'));
     
     //if the response is not ok, we throw an error
     if (response.statusCode != 200) {

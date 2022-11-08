@@ -1,10 +1,10 @@
-part of 'fixtrures_cubit.dart';
+part of 'fixtures_cubit.dart';
 
 
 enum FixturesStatus {loading, success, failure }
 
-class FixtruresInitial {
-  FixtruresInitial({
+class FixturesInitial {
+  FixturesInitial({
     this.status = FixturesStatus.loading,
     this.fixtures = const <Fixtures>[],
   });
@@ -12,11 +12,11 @@ class FixtruresInitial {
   final FixturesStatus status;
   final List<Fixtures> fixtures;
 
-  FixtruresInitial copyWith({
+  FixturesInitial copyWith({
     FixturesStatus? status,
     List<Fixtures>? fixtures,
   }) {
-    return FixtruresInitial(
+    return FixturesInitial(
       status: status ?? this.status,
       fixtures: fixtures ?? this.fixtures,
     );

@@ -21,7 +21,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Soccer app',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          fontFamily: "Poppins",
+          primarySwatch: Colors.blueGrey,
         ),
         home: const Home(),
       ),

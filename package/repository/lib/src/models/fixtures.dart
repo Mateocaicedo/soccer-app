@@ -20,6 +20,7 @@ class Fixtures {
         required this.homeTeamLogo,
         required this.awayTeamLogo,
         required this.leagueLogo,
+        required this.eventTime,
     });
 
     String eventKey;
@@ -39,9 +40,11 @@ class Fixtures {
     String homeTeamLogo;
     String awayTeamLogo;
     String leagueLogo;
+    String eventTime;
     factory Fixtures.fromJson(Map<String, dynamic> json) => Fixtures(
         eventKey: json["event_key"].toString(),
         eventDate: DateTime.parse(json["event_date"].toString()),
+        eventTime: json["event_time"].toString(),
         eventHomeTeam: json["event_home_team"].toString(),
         homeTeamKey: json["home_team_key"].toString(),
         eventAwayTeam: json["event_away_team"].toString(),
@@ -57,11 +60,13 @@ class Fixtures {
         homeTeamLogo: json["home_team_logo"].toString(),
         awayTeamLogo: json["away_team_logo"].toString(),
         leagueLogo: json["league_logo"].toString(),
+
     );
 
     Map<String, dynamic> toJson() => {
         "event_key": eventKey,
         "event_date": "${eventDate.year.toString().padLeft(4, '0')}-${eventDate.month.toString().padLeft(2, '0')}-${eventDate.day.toString().padLeft(2, '0')}",
+        "event_time": eventTime,
         "event_home_team": eventHomeTeam,
         "home_team_key": homeTeamKey,
         "event_away_team": eventAwayTeam,

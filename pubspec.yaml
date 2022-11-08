@@ -25,7 +25,7 @@ environment:
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
+# versions available, run `flutter pub outdated`.dd
 dependencies:
   flutter:
     sdk: flutter
@@ -77,10 +77,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+
+    - family: Poppins
+      fonts:
+          - asset: fonts/Poppins Light 300.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/fixtures/cubit/fixtrures_cubit.dart';
+import 'package:soccer_app/fixtures/cubit/fixtures_cubit.dart';
 import 'package:soccer_app/home/cubit/home_cubit.dart';
 import 'package:repository/repository.dart';
+import 'package:soccer_app/fixtures/view/widgets/fixture_card.dart';
 
 class FixturesPage extends StatelessWidget {
   final Key key;
@@ -12,7 +13,7 @@ class FixturesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          FixtruresCubit(context.read<Repository>())..getFixtures(),
+          FixturesCubit(context.read<Repository>())..getFixtures(),
       child: const FixturesView(
         key: Key('FixturesPage'),
       ),
@@ -20,12 +21,12 @@ class FixturesPage extends StatelessWidget {
   }
 }
 
-class FixturesView extends StatelessWidget {
+class FixturesView extends StatelessWidget{
   const FixturesView({required Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FixtruresCubit, FixtruresInitial>(
+    return BlocBuilder<FixturesCubit, FixturesInitial>(
       builder: (context, state) {
         switch (state.status) {
           case FixturesStatus.loading:
@@ -34,28 +35,50 @@ class FixturesView extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               home: DefaultTabController(
-                length: 4,
+                length: 5,
                 child: Scaffold(
+                  backgroundColor: Color.fromARGB(255, 25, 52, 99),
                   appBar: AppBar(
                     // ignore: prefer_const_constructors
-                    bottom: TabBar(tabs: [
+                    bottom: TabBar(
+                      isScrollable: true,
+                      labelColor: Colors.amber,
+                      unselectedLabelColor: Colors.white,
+                      tabs: const [
                       Tab(text: 'Premier League'),
                       Tab(text: 'La Liga'),
                       Tab(text: 'Serie A'),
                       Tab(text: 'Bundesliga'),
+                      Tab(text: 'Liga BetPlay'),
+
+                      
                     ]),
                   ),
                 body: TabBarView(
-                  children: [
-                    ListView.builder(
-                      itemCount: state.fixtures.length,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          title: Text(state.fixtures[index].awayTeamKey),
-                          subtitle: Text(state.fixtures[index].awayTeamLogo),
-                        );
-                      },
-                    )    
+                    children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ListView.builder(
+                        itemCount: state.fixtures.length,
+                        itemBuilder: (context, index) {
+                          final nameHomeTeam = state.fixtures[index].eventHomeTeam;
+                          final nameAwayTeam = state.fixtures[index].eventAwayTeam;
+                          final homeTeamLogo = state.fixtures[index].homeTeamLogo;
+                          final awayTeamLogo = state.fixtures[index].awayTeamLogo;
+                          final fixture = state.fixtures[index];
+                          print("${fixture.eventHomeTeam} ${fixture.eventFinalResult}");
+                          print(fixture.eventDate.toString().substring(0,10));
+                          print(fixture.eventStatus);
+                          return FixtureCard(fixture: fixture);
+                        },
+                      ),
+                    ),
+
+                    Center( child: Text('La Liga')),
+                    Center( child: Text('Serie A')),
+                    Center( child: Text('Bundesliga')),
+                    Center( child: Text('Liga BetPlay')),
+
                   ],
                 ),
               ),
@@ -64,7 +87,7 @@ class FixturesView extends StatelessWidget {
 
 
           case FixturesStatus.failure:
-            return const Center(child: Text('failed to fetch leagues'));
+            return const Center(child: Text('failed to fetch fixtures'));
         }
       },
     );

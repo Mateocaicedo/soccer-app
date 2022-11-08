@@ -3,10 +3,10 @@ import 'package:meta/meta.dart';
 import 'package:repository/src/models/fixtures.dart';
 import 'package:repository/repository.dart';
 
-part 'fixtrures_state.dart';
+part 'fixtures_state.dart';
 
-class FixtruresCubit extends Cubit<FixtruresInitial> {
-  FixtruresCubit(this.fixtures) : super(FixtruresInitial());
+class FixturesCubit extends Cubit<FixturesInitial> {
+  FixturesCubit(this.fixtures) : super(FixturesInitial());
   
   final Repository fixtures;
 
