@@ -37,14 +37,17 @@ class FixturesView extends StatelessWidget{
               home: DefaultTabController(
                 length: 5,
                 child: Scaffold(
-                  backgroundColor: Color.fromARGB(255, 25, 52, 99),
+                  backgroundColor: const Color.fromARGB(255, 25, 52, 99),
                   appBar: AppBar(
-                    // ignore: prefer_const_constructors
-                    bottom: TabBar(
+                    
+                    title: const Text('League'),
+                    backgroundColor: const Color.fromARGB(255, 25, 52, 99),
+                    bottom: const TabBar(
                       isScrollable: true,
                       labelColor: Colors.amber,
+                      indicatorColor: Colors.amber,
                       unselectedLabelColor: Colors.white,
-                      tabs: const [
+                      tabs: [
                       Tab(text: 'Premier League'),
                       Tab(text: 'La Liga'),
                       Tab(text: 'Serie A'),
@@ -61,10 +64,7 @@ class FixturesView extends StatelessWidget{
                       child: ListView.builder(
                         itemCount: state.fixtures.length,
                         itemBuilder: (context, index) {
-                          final nameHomeTeam = state.fixtures[index].eventHomeTeam;
-                          final nameAwayTeam = state.fixtures[index].eventAwayTeam;
-                          final homeTeamLogo = state.fixtures[index].homeTeamLogo;
-                          final awayTeamLogo = state.fixtures[index].awayTeamLogo;
+                          
                           final fixture = state.fixtures[index];
                           print("${fixture.eventHomeTeam} ${fixture.eventFinalResult}");
                           print(fixture.eventDate.toString().substring(0,10));
@@ -73,7 +73,7 @@ class FixturesView extends StatelessWidget{
                         },
                       ),
                     ),
-
+                    
                     Center( child: Text('La Liga')),
                     Center( child: Text('Serie A')),
                     Center( child: Text('Bundesliga')),
