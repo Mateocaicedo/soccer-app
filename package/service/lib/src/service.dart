@@ -89,7 +89,7 @@ class Service {
     return teams;
   }
 
-  Future<List<Fixtures>> getFixtures() async {
+  Future<List<Fixtures>> getFixtures(String leagueID) async {
 
     final now = DateTime.now();
 
@@ -99,7 +99,7 @@ class Service {
     final formattedTo = DateFormat('yyyy-MM-dd').format(to);  
 
     // Create the URL
-    final response = await http.get(Uri.parse('$_baseUrl?met=Fixtures&timezone=America/New_York&from=$formatted&to=$formattedTo$_apiKey'));
+    final response = await http.get(Uri.parse('$_baseUrl?met=Fixtures&leagueId=$leagueID&timezone=America/New_York&from=$formatted&to=$formattedTo$_apiKey'));
     
     //if the response is not ok, we throw an error
     if (response.statusCode != 200) {
