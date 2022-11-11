@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:soccer_app/home/view/leagues.dart';
+import 'package:soccer_app/leagues/view/leagues.dart';
 import 'package:soccer_app/fixtures/view/fixtures.dart';
 
 class Home extends StatefulWidget {

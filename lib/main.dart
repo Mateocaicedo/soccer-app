@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/home/view/leagues.dart';
+import 'package:soccer_app/leagues/view/leagues.dart';
 import 'package:repository/repository.dart';
 import 'package:soccer_app/home2/home.dart';
 
