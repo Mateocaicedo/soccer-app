@@ -6,8 +6,24 @@ class FixtureCard extends StatelessWidget {
 
   const FixtureCard({Key? key, required this.fixture}) : super(key: key);
 
+
+  setStatus(){
+    
+    switch(fixture.eventStatus){
+
+      case "":
+        return fixture.eventTime;
+      case "Finished":
+        return "Full time";
+      default:
+        return fixture.eventStatus;
+    }
+
+  }
+
   @override
   Widget build(BuildContext context) {
+    
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -122,6 +138,7 @@ class FixtureCard extends StatelessWidget {
                           indent: 10,
                           endIndent: 10,
                         ),
+
                         Container(
                             width: 85,
                             decoration: BoxDecoration(
@@ -137,9 +154,7 @@ class FixtureCard extends StatelessWidget {
                                     style: const TextStyle(
                                         fontFamily: "Poppins", fontSize: 15)),
                                 Text(
-                                    fixture.eventStatus == "Finished"
-                                        ? ""
-                                        : "${fixture.eventStatus}'",
+                                  setStatus(),
                                     style: const TextStyle(
                                         fontFamily: "Poppins", fontSize: 15)),
                               ],
@@ -152,5 +167,7 @@ class FixtureCard extends StatelessWidget {
             ],
           )),
     );
+
   }
+
 }

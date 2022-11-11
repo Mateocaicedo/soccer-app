@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/home/cubit/home_cubit.dart';
+import 'package:soccer_app/home/cubit/league_cubit.dart';
 import 'package:repository/repository.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class LeaguePage extends StatelessWidget {
+  const LeaguePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return  BlocProvider(
-      create: (context) => HomeCubit(context.read<Repository>())..getLeagues(),
-      child: const HomeView(),
+      create: (context) => LeagueCubit(context.read<Repository>())..getLeagues(),
+      child: const LeagueView(),
     );
   }
 }
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class LeagueView extends StatelessWidget {
+  const LeagueView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeCubit, HomeState>(
+    return BlocBuilder<LeagueCubit, LeagueState>(
         builder: (context, state) {
           switch (state.status) {
-            case HomeStatus.loading:
+            case LeaguesStatus.loading:
               return const Center(child: CircularProgressIndicator());
-            case HomeStatus.success:
+            case LeaguesStatus.success:
               return GridView.count(
                 crossAxisCount: 2,
                 children: state.leagues.map((league) => Card(
@@ -37,7 +37,7 @@ class HomeView extends StatelessWidget {
                   ),
                 )).toList());
                 // children: state.leagues.map((league) => Image.network(league.leagueLogo, fit: BoxFit.cover,)).toList());
-            case HomeStatus.failure:
+            case LeaguesStatus.failure:
               return const Center(child: Text('failed to fetch leagues'));
           }
         },

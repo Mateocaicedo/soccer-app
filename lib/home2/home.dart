@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:soccer_app/home/view/home_page.dart';
+import 'package:soccer_app/home/view/leagues.dart';
 import 'package:soccer_app/fixtures/view/fixtures.dart';
 
 class Home extends StatefulWidget {
@@ -20,14 +20,11 @@ class _HomeState extends State<Home>  {
     const FixturesPage(
       key: Key('FixturesPage'),
     ),
-    const HomePage(
-      key: Key('HomePage'),
+    const LeaguePage(
+      key: Key('LeaguePage'),
     ),
-    const HomePage(),
+    const LeaguePage(),
   ];
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +44,7 @@ class _HomeState extends State<Home>  {
             label: 'Leagues',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.personal_injury),
+            icon: Icon(Icons.person),
             label: 'Players',
           ),
         ],

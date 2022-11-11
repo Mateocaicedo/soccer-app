@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soccer_app/fixtures/cubit/fixtures_cubit.dart';
 import 'package:soccer_app/fixtures/view/widgets/state_empty.dart';
-import 'package:soccer_app/home/cubit/home_cubit.dart';
+import 'package:soccer_app/home/cubit/league_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:soccer_app/fixtures/view/widgets/fixture_card.dart';
 
