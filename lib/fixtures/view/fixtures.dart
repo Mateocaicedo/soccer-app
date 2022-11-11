@@ -5,10 +5,10 @@ import 'package:soccer_app/fixtures/view/screens/liga_betplay.dart';
 import 'package:soccer_app/fixtures/view/screens/premier.dart';
 import 'package:soccer_app/fixtures/view/screens/serie_a.dart';
 class FixturesPage extends StatelessWidget {
-  const FixturesPage({super.key});
+   const FixturesPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return  MaterialApp(
               debugShowCheckedModeBanner: false,
               home: DefaultTabController(
@@ -49,4 +49,11 @@ class FixturesPage extends StatelessWidget {
           );
   
   }
+  
+  
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
+  
+  
 }

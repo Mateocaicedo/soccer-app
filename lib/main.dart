@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/leagues/view/leagues.dart';
+import 'package:soccer_app/home/home_view.dart';
 import 'package:repository/repository.dart';
-import 'package:soccer_app/home2/home.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           fontFamily: "Poppins",
           primarySwatch: Colors.blueGrey,
         ),
-        home: const Home(),
+        home: const HomeScreen(),
       ),
     );
   }
