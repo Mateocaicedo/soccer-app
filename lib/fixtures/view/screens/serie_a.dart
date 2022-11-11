@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soccer_app/fixtures/cubit/fixtures_cubit.dart';
+import 'package:soccer_app/fixtures/view/widgets/state_empty.dart';
 import 'package:soccer_app/home/cubit/home_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:soccer_app/fixtures/view/widgets/fixture_card.dart';
@@ -44,7 +45,7 @@ class SerieAView extends StatelessWidget {
             );
 
           case FixturesStatus.failure:
-            return const Center(child: Text('failed to fetch fixtures'));
+            return const EmptyState();
         }
       },
     );

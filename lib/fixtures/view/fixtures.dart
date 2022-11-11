@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:soccer_app/fixtures/view/screens/bundesliga.dart';
+import 'package:soccer_app/fixtures/view/screens/la_liga.dart';
+import 'package:soccer_app/fixtures/view/screens/liga_betplay.dart';
 import 'package:soccer_app/fixtures/view/screens/premier.dart';
 import 'package:soccer_app/fixtures/view/screens/serie_a.dart';
 class FixturesPage extends StatelessWidget {
@@ -31,13 +34,13 @@ class FixturesPage extends StatelessWidget {
                       
                     ]),
                   ),
-                body: TabBarView(
+                body: const TabBarView(
                     children: [
-                    const PremierPage(key: Key('PremierPage')),
-                    const SerieAPage(key: Key('SerieAPage')),
-                    Center( child: Text('Serie A')),
-                    Center( child: Text('Bundesliga')),
-                    Center( child: Text('Liga BetPlay')),
+                    PremierPage(key: Key('PremierPage')),
+                    LaLigaPage(key: Key('LaLigaPage')),
+                    SerieAPage(key: Key('SerieAPage')),
+                    BundesligaPage(key: Key('BundesligaPage')),
+                    LigaBetPlayPage(key: Key('LigaBetPlayPage')),
 
                   ],
                 ),

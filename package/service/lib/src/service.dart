@@ -55,7 +55,7 @@ class Service {
 
   Future<List<Team>> getTeams() async {
 
-    final now = DateTime.now();
+    final now = DateTime.now().toLocal();
 
     final to = now.add(const Duration(days: 7));
 
@@ -93,7 +93,7 @@ class Service {
 
     final now = DateTime.now();
 
-    final to = now.add(const Duration(days: 1));
+    final to = now.add(const Duration(days: 7));
 
     final formatted = DateFormat('yyyy-MM-dd').format(now);
     final formattedTo = DateFormat('yyyy-MM-dd').format(to);  

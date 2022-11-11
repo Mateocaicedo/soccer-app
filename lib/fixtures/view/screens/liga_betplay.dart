@@ -6,24 +6,24 @@ import 'package:soccer_app/home/cubit/home_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:soccer_app/fixtures/view/widgets/fixture_card.dart';
 
-class PremierPage extends StatelessWidget {
+class LigaBetPlayPage extends StatelessWidget {
   final Key key;
-  const PremierPage({required this.key}) : super(key: key);
+  const LigaBetPlayPage({required this.key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          FixturesCubit(context.read<Repository>(), "152")..getFixtures(),
-      child: const PremierView(
-        key: Key('PremierPage'),
+          FixturesCubit(context.read<Repository>(), "120")..getFixtures(),
+      child: const LigaBetPlayView(
+        key: Key('LigaBetPlayPage'),
       ),
     );
   }
 }
 
-class PremierView extends StatelessWidget {
-  const PremierView({required Key key}) : super(key: key);
+class LigaBetPlayView extends StatelessWidget {
+  const LigaBetPlayView({required Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

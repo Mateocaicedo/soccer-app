@@ -27,8 +27,16 @@ class HomeView extends StatelessWidget {
               return const Center(child: CircularProgressIndicator());
             case HomeStatus.success:
               return GridView.count(
-                crossAxisCount: 2, 
-                children: state.leagues.map((league) => Image.network(league.leagueLogo, fit: BoxFit.cover,)).toList());
+                crossAxisCount: 2,
+                children: state.leagues.map((league) => Card(
+                  child: Column(
+                    children: [
+                      Text(league.leagueKey),
+                      Text(league.leagueName),
+                    ],
+                  ),
+                )).toList());
+                // children: state.leagues.map((league) => Image.network(league.leagueLogo, fit: BoxFit.cover,)).toList());
             case HomeStatus.failure:
               return const Center(child: Text('failed to fetch leagues'));
           }
