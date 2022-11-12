@@ -51,9 +51,4 @@ class FixturesPage extends StatelessWidget {
   }
   
   
-  @override
-  // TODO: implement wantKeepAlive
-  bool get wantKeepAlive => true;
-  
-  
 }

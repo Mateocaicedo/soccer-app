@@ -18,6 +18,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
           onTap: (index) {
             context.read<BottomNavigationBloc>().add(PageTapped(index));
           },
+          selectedItemColor: const Color.fromARGB(255, 25, 52, 99),
+          elevation: 0,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.sports_soccer),
