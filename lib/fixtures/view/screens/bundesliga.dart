@@ -31,7 +31,7 @@ class BundesligaView extends StatelessWidget {
       builder: (context, state) {
         switch (state.status) {
           case FixturesStatus.loading:
-            return const Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator(color: Colors.white));
           case FixturesStatus.success:
             return Padding(
               padding: const EdgeInsets.all(8.0),

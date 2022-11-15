@@ -62,6 +62,7 @@ class LeagueView extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           itemCount: state.leagues.length,
                           gridDelegate:
+                          
                               const SliverGridDelegateWithFixedCrossAxisCount(
                                 mainAxisSpacing: 8.0,
                                 crossAxisSpacing: 8.0,

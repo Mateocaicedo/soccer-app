@@ -13,7 +13,6 @@ class PageTapped extends BottomNavigationEvent {
   final int pageIndex;
 
   const PageTapped(this.pageIndex);
-
   @override
   List<Object> get props => [pageIndex];
 

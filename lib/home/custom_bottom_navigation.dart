@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soccer_app/bloc_bottom_navigation/bottom_navigation_bloc.dart';
-import 'package:soccer_app/leagues/view/leagues.dart';
-import 'package:soccer_app/fixtures/view/fixtures.dart';
+
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({

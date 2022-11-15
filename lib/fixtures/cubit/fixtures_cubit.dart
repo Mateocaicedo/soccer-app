@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+
 import 'package:repository/src/models/fixtures.dart';
 import 'package:repository/repository.dart';
 
@@ -19,6 +19,7 @@ class FixturesCubit extends Cubit<FixturesInitial> {
     } catch (e) {
       emit(state.copyWith(status: FixturesStatus.failure));
     }
+
   }
   
 }
