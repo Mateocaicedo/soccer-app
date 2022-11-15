@@ -14,6 +14,7 @@ class LeagueState{
 
   List<League> leagues;
 
+
   LeagueState copyWith({
     LeaguesStatus? status,
     List<League>? leagues,

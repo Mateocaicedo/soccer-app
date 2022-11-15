@@ -8,7 +8,9 @@
 
 import 'package:repository/src/models/fixtures.dart';
 import 'package:repository/src/models/league.dart';
+import 'package:repository/src/models/team.dart';
 import 'package:service/service.dart';
+
 
 /// {@template repository}
 /// A Very Good Project created by Very Good CLI.
@@ -33,6 +35,15 @@ class Repository {
     final fixtures = await _service.getFixtures(leagueID);
 
     return fixtures;
+
+  }
+
+
+  Future<List<Team>> teams(String leagueID) async {
+
+    final teams = await _service.getTeams(leagueID);
+
+    return teams;
 
   }
 

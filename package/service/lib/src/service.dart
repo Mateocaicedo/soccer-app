@@ -54,20 +54,12 @@ class Service {
   }
 
 
-  Future<List<Team>> getTeams() async {
+  Future<List<Team>> getTeams(String leagueID) async {
 
-    final now = DateTime.now().toLocal();
 
-    final to = now.add(const Duration(days: 7));
-
-    final formatted = DateFormat('yyyy-MM-dd').format(now);
-    final formattedTo = DateFormat('yyyy-MM-dd').format(to);  
-
-   
-
-    print('$formatted $formattedTo');
+    
     // Create the URL
-    final response = await http.get(Uri.parse('$_baseUrl?&met=Teams&leagueId=206$_apiKey'));
+    final response = await http.get(Uri.parse('$_baseUrl?&met=Teams&leagueId=$leagueID$_apiKey'));
     
     //if the response is not ok, we throw an error
     if (response.statusCode != 200) {
