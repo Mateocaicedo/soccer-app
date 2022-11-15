@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:repository/repository.dart';
 import 'package:repository/src/models/league.dart';
+import 'package:repository/src/models/team.dart';
 part 'league_state.dart';
 
 class LeagueCubit extends Cubit<LeagueState> {
@@ -19,4 +20,14 @@ class LeagueCubit extends Cubit<LeagueState> {
       emit(state.copyWith(status: LeaguesStatus.failure));
     }
   }
+
+  // Future<void> getTeams(String leagueID) async {
+  //   emit(state.copyWith(status: LeaguesStatus.loading));
+  //   try {
+  //     final teams = await league.teams(leagueID);
+  //     emit(state.copyWith(status: LeaguesStatus.success, teams: teams ));
+  //   } catch (e) {
+  //     emit(state.copyWith(status: LeaguesStatus.failure));
+  //   }
+  // }
 }

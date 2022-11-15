@@ -4,8 +4,11 @@ enum LeaguesStatus {loading, success, failure }
 
 class LeagueState{
   LeagueState({
+    
+    //this.teams = const <Team>[],
     this.status = LeaguesStatus.loading,
     this.leagues = const <League>[],
+    
   });
 
   final LeaguesStatus status;
@@ -13,7 +16,7 @@ class LeagueState{
   
 
   List<League> leagues;
-
+  //List<Team> teams = [];
 
   LeagueState copyWith({
     LeaguesStatus? status,
@@ -22,6 +25,7 @@ class LeagueState{
     return LeagueState(
       status: status ?? this.status,
       leagues: leagues ?? this.leagues,
+      //teams: teams,
     );
   }
 
