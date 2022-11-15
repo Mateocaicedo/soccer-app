@@ -5,7 +5,7 @@ import 'package:repository/repository.dart';
 
 class LeaguePage extends StatelessWidget {
   const LeaguePage({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -16,8 +16,12 @@ class LeaguePage extends StatelessWidget {
   }
 }
 
+
+
 class LeagueView extends StatelessWidget {
   const LeagueView({super.key});
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +34,8 @@ class LeagueView extends StatelessWidget {
             return Scaffold(
                 backgroundColor: const Color.fromARGB(255, 25, 52, 99),
                 appBar: AppBar(
-                  title: const Text('Leagues'),
+                  backgroundColor: const Color.fromARGB(255, 25, 52, 99),
+                  title: const Text('Leagues', style: TextStyle(color: Colors.amber),),
                 ),
                 body: Column(
                   children: [
@@ -53,6 +58,13 @@ class LeagueView extends StatelessWidget {
                         }).toList(),
                         onChanged: (value) {
                           context.read<LeagueCubit>().getLeagues();
+                          switch (value) {
+                            case 'Premier League':
+                              context.read<LeagueCubit>().getLeagues();
+                              
+                              break;
+                            default:
+                          }
                         },
                       ),
                     ),
