@@ -21,13 +21,4 @@ class LeagueCubit extends Cubit<LeagueState> {
     }
   }
 
-  Future<void> getTeams(String leagueID) async {
-    emit(state.copyWith(status: LeaguesStatus.loading));
-    try {
-      final teams = await league.teams(leagueID);
-      emit(state.copyWith(status: LeaguesStatus.success, teams: teams));
-    } catch (e) {
-      emit(state.copyWith(status: LeaguesStatus.failure));
-    }
-  }
 }

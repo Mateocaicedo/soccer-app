@@ -21,12 +21,11 @@ class LeagueState{
   LeagueState copyWith({
     LeaguesStatus? status,
     List<League>? leagues,
-    List<Team>? teams,
   }) {
     return LeagueState(
       status: status ?? this.status,
       leagues: leagues ?? this.leagues,
-      teams: teams ?? this.teams,
+
     );
   }
 
