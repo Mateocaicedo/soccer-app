@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:soccer_app/fixtures/view/screens/premier.dart';
 import 'package:soccer_app/leagues/cubit/league_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:soccer_app/teams/teams_cubit.dart';
 import 'package:soccer_app/fixtures/view/widgets/state_empty.dart';
+import 'package:soccer_app/leagues/view/world_cup.dart';
 
 class LeaguePage extends StatelessWidget {
   const LeaguePage({super.key});
@@ -26,10 +28,57 @@ class LeagueView extends StatelessWidget {
   const LeagueView({super.key});
 
 
-  Widget _getTeams(String leagueId) {
+  Widget _getTeams(String leagueID) {
+    
+    print("llego al widget");
+    // return BlocBuilder<LeagueCubit, LeagueState>(
+    //     builder: (context, state) {
+    //       if (state.status == LeaguesStatus.loading) {
+    //         return const Center(child: CircularProgressIndicator());
+    //       } else if (state.status == LeaguesStatus.success) {
+    //         return ListView.builder(
+    //           itemCount: state.teams.length,
+    //           itemBuilder: (context, index) {
+    //             final team = state.teams[index];
+    //             return ListTile(
+    //               title: Text(team.teamName),
+                  
+    //             );
+    //           },
+    //         );
+    //       } else {
+    //         return const EmptyState();
+    //       }
+    //     },
+      
+    // );
+
+    // return BlocBuilder<LeagueCubit, LeagueState>(
+    //   builder: (context, state) {
+    //     if (state.status == LeaguesStatus.success) {
+    //       return ListView.builder(
+    //         itemCount: state.teams.length,
+    //         itemBuilder: (context, index) {
+    //           final team = state.teams[index];
+    //           return ListTile(
+    //             title: Text(team.teamName),
+    //             subtitle: Text(team.teamKey),
+    //           );
+    //         },
+    //       );
+    //     } else if (state.status == LeaguesStatus.failure) {
+    //       return const EmptyState();
+    //     } else {
+    //       return const Center(child: CircularProgressIndicator());
+    //     }
+    //   },
+      
+    // );
+
+
     return BlocProvider(
       create: (context) =>
-          TeamsCubit(context.read<Repository>())..getTeams(leagueId),
+          TeamsCubit(context.read<Repository>())..getTeams(leagueID),
       child: BlocBuilder<TeamsCubit,TeamsState>(
         builder: (context, state) {
           switch (state.status) {
@@ -92,14 +141,20 @@ class LeagueView extends StatelessWidget {
                             child: Text(league.leagueName,),
                           );
                         }).toList(),
+                        // value: 'Liga BetPlay',
                         onChanged: (value) {
                           
                           switch (value) {
 
                             case 'Premier League':
-                              
+                              print("llegamos");
+                              //LeagueCubit(context.read<Repository>()).getTeams('4328');
+                              //context.read<LeagueCubit>().getTeams('302');
+                              //_getTeams( '302');
                               //context.read<TeamsCubit>().getTeams('152');
-                              _getTeams('152');
+                              //_getTeams('152');
+                              print("salimos");
+                              
                               break;
                             case 'La Liga':
                               context.read<TeamsCubit>().getTeams('302');
@@ -114,7 +169,11 @@ class LeagueView extends StatelessWidget {
                               context.read<TeamsCubit>().getTeams('120');
                               break;
                             case 'World Cup':
-                              context.read<TeamsCubit>().getTeams('28');
+                              print(value);
+                              //_getTeams( '28');
+                              //context.read<TeamsCubit>().getTeams('28');
+                              const WorldCupPage();
+                              print("sale de aca");
                               break;
                             default:
 
@@ -123,34 +182,34 @@ class LeagueView extends StatelessWidget {
                       ),
                     ),
                     
-                    Expanded(
-                      child: GridView.builder(
-                          padding: const EdgeInsets.all(8.0),
-                          itemCount: state.leagues.length,
-                          gridDelegate:
+                    // Expanded(
+                    //   child: GridView.builder(
+                    //       padding: const EdgeInsets.all(8.0),
+                    //       itemCount: state.leagues.length,
+                    //       gridDelegate:
                           
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                mainAxisSpacing: 8.0,
-                                crossAxisSpacing: 8.0,
-                            crossAxisCount: 2,
-                          ),
-                          itemBuilder: (context, index) {
-                            final league = state.leagues[index];
-                            return Card(
+                    //           const SliverGridDelegateWithFixedCrossAxisCount(
+                    //             mainAxisSpacing: 8.0,
+                    //             crossAxisSpacing: 8.0,
+                    //         crossAxisCount: 2,
+                    //       ),
+                    //       itemBuilder: (context, index) {
+                    //         final league = state.leagues[index];
+                    //         return Card(
 
-                              child: Container(
-                                width: 200,
-                                height: 100,
-                                child: Column(
-                                  children: [
-                                    Text(league.leagueName),
-                                    Text(league.leagueLogo),
-                                  ],
-                                ),
-                              ),
-                            );
-                          }),
-                    ),
+                    //           child: Container(
+                    //             width: 200,
+                    //             height: 100,
+                    //             child: Column(
+                    //               children: [
+                    //                 Text(league.leagueName),
+                    //                 Text(league.leagueLogo),
+                    //               ],
+                    //             ),
+                    //           ),
+                    //         );
+                    //       }),
+                    // ),
 
                     
                   ],
