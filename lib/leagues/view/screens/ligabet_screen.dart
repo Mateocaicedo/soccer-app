@@ -1,27 +1,27 @@
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/teams/teams_cubit.dart';
+import 'package:soccer_app/teams_bloc/teams_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:flutter/material.dart';
 
-import '../../fixtures/view/widgets/state_empty.dart';
+import '../../../fixtures/view/widgets/state_empty.dart';
 import '../widgets/card_teams.dart';
 
-class BundesligaScreen extends StatelessWidget {
-  const BundesligaScreen({super.key});
+class LigaBetPlayScreen extends StatelessWidget {
+  const LigaBetPlayScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          TeamsCubit(context.read<Repository>())..getTeams(175),
-      child: const BundesligaView(),
+          TeamsCubit(context.read<Repository>())..getTeams(120),
+      child: const LigaBetPlayView(),
     );
   }
 }
 
-class BundesligaView extends StatelessWidget {
-  const BundesligaView({super.key});
+class LigaBetPlayView extends StatelessWidget {
+  const LigaBetPlayView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class BundesligaView extends StatelessWidget {
           switch (state.status) {
             case TeamsStatus.loading:
               return const Center(
-                  child: CircularProgressIndicator(color: Colors.black));
+                  child: CircularProgressIndicator(color: Colors.white));
             case TeamsStatus.success:
               return GridView.builder(
                 gridDelegate:

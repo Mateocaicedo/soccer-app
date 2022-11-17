@@ -1,16 +1,13 @@
-import 'package:repository/repository.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/leagues/view/bundesliga_screen.dart';
-import 'package:soccer_app/leagues/view/laliga_screen.dart';
-import 'package:soccer_app/leagues/view/ligabet_screen.dart';
-import 'package:soccer_app/leagues/view/premier_screen.dart';
-import 'package:soccer_app/leagues/view/seriea_screen.dart';
-import 'package:soccer_app/leagues/view/worldcup_screen.dart';
 
-import '../../teams/teams_cubit.dart';
+import 'package:flutter/material.dart';
+import 'package:soccer_app/leagues/view/screens/bundesliga_screen.dart';
+import 'package:soccer_app/leagues/view/screens/laliga_screen.dart';
+import 'package:soccer_app/leagues/view/screens/ligabet_screen.dart';
+import 'package:soccer_app/leagues/view/screens/premier_screen.dart';
+import 'package:soccer_app/leagues/view/screens/seriea_screen.dart';
+import 'package:soccer_app/leagues/view/screens/worldcup_screen.dart';
+
+
 
 class LeagueScreen extends StatefulWidget {
   const LeagueScreen({super.key});
@@ -90,7 +87,6 @@ class _LeagueScreenState extends State<LeagueScreen> {
               value: leagues,
               child: Text(
                 leagues,
-                
               ),
             ))
         .toList();
@@ -112,15 +108,14 @@ class _LeagueScreenState extends State<LeagueScreen> {
 
   Widget _dropdownButton() {
     return DropdownButtonFormField<dynamic>(
-      
       iconSize: 30,
       iconEnabledColor: Colors.black,
-      style: const TextStyle(color: Colors.black, fontSize: 16, fontFamily: "Poppins"),
+      style: const TextStyle(
+          color: Colors.black, fontSize: 16, fontFamily: "Poppins"),
       decoration: const InputDecoration(
         filled: true,
         fillColor: Colors.white,
         border: OutlineInputBorder(),
-        
         enabledBorder: OutlineInputBorder(
           //<-- SEE HERE
           borderSide: BorderSide(color: Colors.white, width: 2),

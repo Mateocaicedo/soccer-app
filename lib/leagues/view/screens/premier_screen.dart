@@ -1,27 +1,28 @@
-
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/teams/teams_cubit.dart';
+import 'package:soccer_app/teams_bloc/teams_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:flutter/material.dart';
 
-import '../../fixtures/view/widgets/state_empty.dart';
+import '../../../fixtures/view/widgets/state_empty.dart';
 import '../widgets/card_teams.dart';
 
-class LigaBetPlayScreen extends StatelessWidget {
-  const LigaBetPlayScreen({super.key});
+class PremierScreen extends StatelessWidget {
+  const PremierScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          TeamsCubit(context.read<Repository>())..getTeams(120),
-      child: const LigaBetPlayView(),
+          TeamsCubit(context.read<Repository>())..getTeams(152),
+      child: const PremierView(),
     );
   }
 }
 
-class LigaBetPlayView extends StatelessWidget {
-  const LigaBetPlayView({super.key});
+class PremierView extends StatelessWidget {
+  const PremierView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class LigaBetPlayView extends StatelessWidget {
           switch (state.status) {
             case TeamsStatus.loading:
               return const Center(
-                  child: CircularProgressIndicator(color: Colors.black));
+                  child: CircularProgressIndicator(color: Colors.white));
             case TeamsStatus.success:
               return GridView.builder(
                 gridDelegate:

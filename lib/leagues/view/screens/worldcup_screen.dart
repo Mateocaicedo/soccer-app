@@ -1,28 +1,28 @@
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/teams/teams_cubit.dart';
+import 'package:soccer_app/teams_bloc/teams_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:flutter/material.dart';
 
-import '../../fixtures/view/widgets/state_empty.dart';
+import '../../../fixtures/view/widgets/state_empty.dart';
 import '../widgets/card_teams.dart';
-
-class PremierScreen extends StatelessWidget {
-  const PremierScreen({super.key});
-
+class WorldCupScreen extends StatelessWidget {
+  const WorldCupScreen({super.key});
+  
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) =>
-          TeamsCubit(context.read<Repository>())..getTeams(152),
-      child: const PremierView(),
+    return BlocProvider(create: 
+      (context) => TeamsCubit(context.read<Repository>())..getTeams(28),
+      child: const WorldCupView(),
     );
+    
   }
+
 }
 
-class PremierView extends StatelessWidget {
-  const PremierView({super.key});
+class WorldCupView extends StatelessWidget {
+  const WorldCupView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +31,7 @@ class PremierView extends StatelessWidget {
         builder: (context, state) {
           switch (state.status) {
             case TeamsStatus.loading:
-              return const Center(
-                  child: CircularProgressIndicator(color: Colors.black));
+              return const Center(child: CircularProgressIndicator(color: Colors.white));
             case TeamsStatus.success:
               return GridView.builder(
                 gridDelegate:
@@ -45,9 +44,9 @@ class PremierView extends StatelessWidget {
                   final team = state.teams[index];
                   return TeamCard(team: team);
                 },
-                itemCount: state.teams.length,
+                itemCount: 32,
               );
-
+    
             case TeamsStatus.failure:
               return const EmptyState();
           }

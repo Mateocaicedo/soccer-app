@@ -1,28 +1,26 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/teams/teams_cubit.dart';
+import 'package:soccer_app/leagues/view/widgets/card_teams.dart';
+import 'package:soccer_app/teams_bloc/teams_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:flutter/material.dart';
 
-import '../../fixtures/view/widgets/state_empty.dart';
-import '../widgets/card_teams.dart';
-class WorldCupScreen extends StatelessWidget {
-  const WorldCupScreen({super.key});
-  
+import '../../../fixtures/view/widgets/state_empty.dart';
+
+class SerieAScreen extends StatelessWidget {
+  const SerieAScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(create: 
-      (context) => TeamsCubit(context.read<Repository>())..getTeams(28),
-      child: const WorldCupView(),
+    return BlocProvider(
+      create: (context) =>
+          TeamsCubit(context.read<Repository>())..getTeams(207),
+      child: const SerieAView(),
     );
-    
   }
-
 }
 
-class WorldCupView extends StatelessWidget {
-  const WorldCupView({super.key});
+class SerieAView extends StatelessWidget {
+  const SerieAView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +29,11 @@ class WorldCupView extends StatelessWidget {
         builder: (context, state) {
           switch (state.status) {
             case TeamsStatus.loading:
-              return const Center(child: CircularProgressIndicator(color: Colors.black));
+              return const Center(
+                  child: CircularProgressIndicator(color: Colors.white));
             case TeamsStatus.success:
               return GridView.builder(
-                gridDelegate:
-                    const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   mainAxisSpacing: 8.0,
                   crossAxisSpacing: 8.0,
                   crossAxisCount: 2,
@@ -44,9 +42,9 @@ class WorldCupView extends StatelessWidget {
                   final team = state.teams[index];
                   return TeamCard(team: team);
                 },
-                itemCount: 32,
+                itemCount: state.teams.length,
               );
-    
+
             case TeamsStatus.failure:
               return const EmptyState();
           }

@@ -1,10 +1,10 @@
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/teams/teams_cubit.dart';
+import 'package:soccer_app/teams_bloc/teams_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:flutter/material.dart';
 
-import '../../fixtures/view/widgets/state_empty.dart';
+import '../../../fixtures/view/widgets/state_empty.dart';
 import '../widgets/card_teams.dart';
 
 class LaLigaScreen extends StatelessWidget {
@@ -31,7 +31,7 @@ class LaLigaView extends StatelessWidget {
           switch (state.status) {
             case TeamsStatus.loading:
               return const Center(
-                  child: CircularProgressIndicator(color: Colors.black));
+                  child: CircularProgressIndicator(color: Colors.white));
             case TeamsStatus.success:
               return GridView.builder(
                 gridDelegate:

@@ -25,8 +25,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
               label: 'Fixtures',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.emoji_events),
-              label: 'Leagues',
+              icon: Icon(Icons.emoji_events_sharp),
+              label: 'Teams',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
