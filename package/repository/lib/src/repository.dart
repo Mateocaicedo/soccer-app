@@ -39,7 +39,7 @@ class Repository {
   }
 
 
-  Future<List<Team>> teams(String leagueID) async {
+  Future<List<Team>> teams(int leagueID) async {
 
     final teams = await _service.getTeams(leagueID);
 

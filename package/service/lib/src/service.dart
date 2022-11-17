@@ -54,7 +54,7 @@ class Service {
   }
 
 
-  Future<List<Team>> getTeams(String leagueID) async {
+  Future<List<Team>> getTeams(int leagueID) async {
 
 
     

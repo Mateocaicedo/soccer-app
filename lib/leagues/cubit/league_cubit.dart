@@ -21,7 +21,7 @@ class LeagueCubit extends Cubit<LeagueState> {
     }
   }
 
-  Future<void> getTeams(String leagueID) async {
+  Future<void> getTeams(int leagueID) async {
     emit(state.copyWith(status: LeaguesStatus.loading));
     try {
       final teams = await league.teams(leagueID);
