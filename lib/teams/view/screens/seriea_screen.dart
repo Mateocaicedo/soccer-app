@@ -4,7 +4,7 @@ import 'package:soccer_app/teams/teams_bloc/teams_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:flutter/material.dart';
 
-import '../../../fixtures/view/widgets/state_empty.dart';
+import '../../../widgets/state_empty.dart';
 
 class SerieAScreen extends StatelessWidget {
   const SerieAScreen({super.key});
@@ -46,7 +46,7 @@ class SerieAView extends StatelessWidget {
               );
 
             case TeamsStatus.failure:
-              return const EmptyState();
+              return const EmptyState(message: "There are no teams",);
           }
         },
       ),

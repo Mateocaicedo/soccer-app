@@ -1,11 +1,11 @@
-import 'package:flutter/src/widgets/container.dart';
+
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soccer_app/teams/teams_bloc/teams_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:flutter/material.dart';
 
-import '../../../fixtures/view/widgets/state_empty.dart';
+import '../../../widgets/state_empty.dart';
 import '../widgets/card_teams.dart';
 class WorldCupScreen extends StatelessWidget {
   const WorldCupScreen({super.key});
@@ -48,7 +48,7 @@ class WorldCupView extends StatelessWidget {
               );
     
             case TeamsStatus.failure:
-              return const EmptyState();
+              return const EmptyState(message: "There are no fixtures",);
           }
         },
       ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class EmptyState extends StatelessWidget {
-  const EmptyState({super.key});
+  const EmptyState({super.key, required this.message});
+  final String message;
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +16,9 @@ class EmptyState extends StatelessWidget {
             width: 300,
             height: 300,
           ),
-          const Text(
-            'There are no fixtures',
-            style: TextStyle(fontSize: 20, color: Colors.white),
+          Text(
+            message,
+            style: const TextStyle(fontSize: 20, color: Colors.white),
           ),
         ],
       ),
