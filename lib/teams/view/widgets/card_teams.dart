@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:repository/src/models/team.dart';
-import 'package:soccer_app/leagues/view/widgets/route.dart';
+import 'package:soccer_app/teams/view/widgets/route.dart';
 
 class TeamCard extends StatelessWidget {
   const TeamCard({super.key, required this.team});

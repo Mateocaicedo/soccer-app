@@ -1,27 +1,28 @@
 
+
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/teams_bloc/teams_cubit.dart';
+import 'package:soccer_app/teams/teams_bloc/teams_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:flutter/material.dart';
 
 import '../../../fixtures/view/widgets/state_empty.dart';
 import '../widgets/card_teams.dart';
 
-class BundesligaScreen extends StatelessWidget {
-  const BundesligaScreen({super.key});
+class PremierScreen extends StatelessWidget {
+  const PremierScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          TeamsCubit(context.read<Repository>())..getTeams(175),
-      child: const BundesligaView(),
+          TeamsCubit(context.read<Repository>())..getTeams(152),
+      child: const PremierView(),
     );
   }
 }
 
-class BundesligaView extends StatelessWidget {
-  const BundesligaView({super.key});
+class PremierView extends StatelessWidget {
+  const PremierView({super.key});
 
   @override
   Widget build(BuildContext context) {

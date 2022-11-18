@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soccer_app/bloc_bottom_navigation/bottom_navigation_bloc.dart';
 import 'package:soccer_app/fixtures/view/fixtures.dart';
-import 'package:soccer_app/leagues/view/leagues.dart';
-import 'package:soccer_app/leagues/view/leagues.dart';
+import 'package:soccer_app/leagues/leagues_home.dart';
+import 'package:soccer_app/teams/view/teams_home.dart';
+
 import 'custom_bottom_navigation.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -32,9 +33,9 @@ class HomeView extends StatelessWidget {
             case 0:
               return const FixturesPage();
             case 1:
-              return const LeagueScreen();
+              return const TeamScreen();
             case 2:
-              return const Center(child: Text('Players'));
+              return const LeagueScreen();
             default:
               return const Center(child: Text('Fixtures'));
           }

@@ -78,7 +78,7 @@ class Service {
       return Team.fromJson(item as Map<String, dynamic>);
     }).toList();
     // Map the results to a list of strings
-    
+  
     return teams;
   }
 

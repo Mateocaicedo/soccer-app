@@ -1,22 +1,22 @@
 
 import 'package:flutter/material.dart';
-import 'package:soccer_app/leagues/view/screens/bundesliga_screen.dart';
-import 'package:soccer_app/leagues/view/screens/laliga_screen.dart';
-import 'package:soccer_app/leagues/view/screens/ligabet_screen.dart';
-import 'package:soccer_app/leagues/view/screens/premier_screen.dart';
-import 'package:soccer_app/leagues/view/screens/seriea_screen.dart';
-import 'package:soccer_app/leagues/view/screens/worldcup_screen.dart';
+import 'package:soccer_app/teams/view/screens/bundesliga_screen.dart';
+import 'package:soccer_app/teams/view/screens/laliga_screen.dart';
+import 'package:soccer_app/teams/view/screens/ligabet_screen.dart';
+import 'package:soccer_app/teams/view/screens/premier_screen.dart';
+import 'package:soccer_app/teams/view/screens/seriea_screen.dart';
+import 'package:soccer_app/teams/view/screens/worldcup_screen.dart';
 
 
 
-class LeagueScreen extends StatefulWidget {
-  const LeagueScreen({super.key});
+class TeamScreen extends StatefulWidget {
+  const TeamScreen({super.key});
 
   @override
-  State<LeagueScreen> createState() => _LeagueScreenState();
+  State<TeamScreen> createState() => _TeamScreenState();
 }
 
-class _LeagueScreenState extends State<LeagueScreen> {
+class _TeamScreenState extends State<TeamScreen> {
   final _leaguesMap = {
     'Premier League': 152,
     'World Cup': 28,

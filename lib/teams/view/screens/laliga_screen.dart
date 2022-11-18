@@ -1,26 +1,27 @@
+
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/leagues/view/widgets/card_teams.dart';
-import 'package:soccer_app/teams_bloc/teams_cubit.dart';
+import 'package:soccer_app/teams/teams_bloc/teams_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:flutter/material.dart';
 
 import '../../../fixtures/view/widgets/state_empty.dart';
+import '../widgets/card_teams.dart';
 
-class SerieAScreen extends StatelessWidget {
-  const SerieAScreen({super.key});
+class LaLigaScreen extends StatelessWidget {
+  const LaLigaScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          TeamsCubit(context.read<Repository>())..getTeams(207),
-      child: const SerieAView(),
+          TeamsCubit(context.read<Repository>())..getTeams(302),
+      child: const LaLigaView(),
     );
   }
 }
 
-class SerieAView extends StatelessWidget {
-  const SerieAView({super.key});
+class LaLigaView extends StatelessWidget {
+  const LaLigaView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,8 @@ class SerieAView extends StatelessWidget {
                   child: CircularProgressIndicator(color: Colors.white));
             case TeamsStatus.success:
               return GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate:
+                    const SliverGridDelegateWithFixedCrossAxisCount(
                   mainAxisSpacing: 8.0,
                   crossAxisSpacing: 8.0,
                   crossAxisCount: 2,
