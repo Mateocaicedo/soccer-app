@@ -4,9 +4,7 @@
 
 import 'dart:convert';
 
-// Player playerFromJson(String str) => Player.fromJson(json.decode(str));
 
-// String playerToJson(Player data) => json.encode(data.toJson());
 
 class Player {
     Player({

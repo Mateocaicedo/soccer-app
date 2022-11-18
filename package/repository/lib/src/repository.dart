@@ -9,6 +9,7 @@
 import 'package:repository/src/models/fixtures.dart';
 import 'package:repository/src/models/league.dart';
 import 'package:repository/src/models/team.dart';
+import 'package:repository/src/models/topscorers.dart';
 import 'package:service/service.dart';
 
 
@@ -44,6 +45,14 @@ class Repository {
     final teams = await _service.getTeams(leagueID);
 
     return teams;
+
+  }
+
+  Future<List<TopScorers>> topscorers(int leagueID) async {
+
+    final topscorers = await _service.getTopScorers(leagueID);
+
+    return topscorers;
 
   }
 

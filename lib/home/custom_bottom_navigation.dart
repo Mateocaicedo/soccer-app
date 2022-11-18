@@ -30,7 +30,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: 'Players',
+              label: 'Leagues',
             ),
           ],
         );

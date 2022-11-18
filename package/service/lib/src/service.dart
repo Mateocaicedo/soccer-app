@@ -15,6 +15,7 @@ import 'package:repository/src/models/fixtures.dart';
 import 'package:repository/src/models/league.dart';
 import 'package:repository/src/models/player.dart';
 import 'package:repository/src/models/team.dart';
+import 'package:repository/src/models/topscorers.dart';
 
 /// {@template service}
 /// A Very Good Project created by Very Good CLI.
@@ -144,11 +145,34 @@ class Service {
     return players;
   }
 
+  Future<List<TopScorers>> getTopScorers(int leagueId) async{
+    // Create the URL
+    final response = await http.get(Uri.parse('$_baseUrl?met=Topscorers&leagueId=$leagueId$_apiKey'));
+    
+    //if the response is not ok, we throw an error
+    if (response.statusCode != 200) {
+      throw Exception('Failed to load data');
+    } 
+    // Decode the JSON
+    // We use jsonDecode to decode the JSON
+    // https://api.dart.dev/stable/2.10.4/dart-convert/jsonDecode.html
+    // Return the decoded JSON
+    final withoutUtf = utf8.decode(response.bodyBytes);
+  
+    final body = jsonDecode(withoutUtf)['result'] as List;
+    // Decode the JSON
+    // ignore: omit_local_variable_types
+    final List<TopScorers> topScorers = body.map<TopScorers>((dynamic item) {
+      return TopScorers.fromJson(item as Map<String, dynamic>);
+    }).toList();
+    // Map the results to a list of strings
+    
+    return topScorers;
+  }
+
 
  
 
 
-  Future fetch() async {
-    
-  }
+  
 }
