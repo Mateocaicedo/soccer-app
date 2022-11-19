@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:repository/src/models/team.dart';
 import 'package:soccer_app/teams/view/widgets/route.dart';
+import 'package:soccer_app/resources/colors.dart';
 
 class TeamCard extends StatelessWidget {
   const TeamCard({super.key, required this.team});
@@ -37,7 +38,7 @@ class TeamCard extends StatelessWidget {
                 margin: const EdgeInsets.all(15.0),
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 25, 52, 99),
+                  color: AppColors.primaryColor,
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
                 child: Text(

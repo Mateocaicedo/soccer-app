@@ -2,7 +2,7 @@
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soccer_app/widgets/state_empty.dart';
-import 'package:soccer_app/topscorers_bloc/cubit/topscorers_cubit.dart';
+import 'package:soccer_app/blocs/bloc_topscorers.dart/topscorers_cubit.dart';
 import 'package:repository/src/models/league.dart';
 import 'package:repository/src/models/topscorers.dart';
 import 'package:repository/repository.dart';

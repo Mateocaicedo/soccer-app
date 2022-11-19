@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soccer_app/widgets/state_empty.dart';
-import 'package:soccer_app/leagues/cubit/league_cubit.dart';
+import 'package:soccer_app/blocs/bloc_leagues/league_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:soccer_app/leagues/view/widgets/route.dart';
 import 'package:repository/src/models/league.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/fixtures/cubit/fixtures_cubit.dart';
+import 'package:soccer_app/blocs/bloc_fixtures/fixtures_cubit.dart';
 import 'package:soccer_app/widgets/state_empty.dart';
 
 import 'package:repository/repository.dart';

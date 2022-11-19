@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/bloc_bottom_navigation/bottom_navigation_bloc.dart';
-import 'package:soccer_app/fixtures/view/fixtures.dart';
+import 'package:soccer_app/blocs/bloc_bottom_navigation/bottom_navigation_bloc.dart';
+import 'package:soccer_app/fixtures/view/fixtures_home.dart';
 import 'package:soccer_app/leagues/leagues_home.dart';
 import 'package:soccer_app/teams/view/teams_home.dart';
 

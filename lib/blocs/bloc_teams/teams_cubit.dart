@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
 import 'package:repository/repository.dart';
 import 'package:repository/src/models/team.dart';
 part 'teams_state.dart';

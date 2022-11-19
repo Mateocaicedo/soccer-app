@@ -1,6 +1,6 @@
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soccer_app/teams/teams_bloc/teams_cubit.dart';
+import 'package:soccer_app/blocs/bloc_teams/teams_cubit.dart';
 import 'package:repository/repository.dart';
 import 'package:flutter/material.dart';
 
