@@ -83,7 +83,7 @@ class Service {
     return teams;
   }
 
-  Future<List<Fixtures>> getFixtures(String leagueID) async {
+  Future<List<Fixtures>> getFixtures(int leagueID) async {
 
     final now = DateTime.now();
 

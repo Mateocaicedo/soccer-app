@@ -31,7 +31,7 @@ class Repository {
   }
 
 
-   Future<List<Fixtures>> fixtures(String leagueID) async {
+   Future<List<Fixtures>> fixtures(int leagueID) async {
 
     final fixtures = await _service.getFixtures(leagueID);
 

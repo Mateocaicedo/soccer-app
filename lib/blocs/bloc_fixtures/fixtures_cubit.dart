@@ -6,20 +6,17 @@ import 'package:repository/repository.dart';
 part 'fixtures_state.dart';
 
 class FixturesCubit extends Cubit<FixturesInitial> {
-  FixturesCubit(this.fixtures,this.leagueID) : super(FixturesInitial());
-  
-  final Repository fixtures;
-  final String leagueID ;
+  FixturesCubit(this.fixtures) : super(FixturesInitial());
 
-  Future<void> getFixtures() async {
+  final Repository fixtures;
+
+  Future<void> getFixtures(int leagueId) async {
     emit(state.copyWith(status: FixturesStatus.loading));
     try {
-      final fix = await fixtures.fixtures(leagueID);
+      final fix = await fixtures.fixtures(leagueId);
       emit(state.copyWith(status: FixturesStatus.success, fixtures: fix));
     } catch (e) {
       emit(state.copyWith(status: FixturesStatus.failure));
     }
-
   }
-  
 }

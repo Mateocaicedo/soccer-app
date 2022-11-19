@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:repository/src/models/fixtures.dart';
+import 'package:soccer_app/resources/colors.dart';
 
 class FixtureCard extends StatelessWidget {
   final Fixtures fixture;
@@ -84,13 +85,13 @@ class FixtureCard extends StatelessWidget {
                                 Text(
                                   fixture.eventHomeTeam.length > 21 ? '${fixture.eventHomeTeam.substring(0, 19)}...' : fixture.eventHomeTeam,
                                   style: const TextStyle(
-                                      fontFamily: "Poppins", fontSize: 15),
+                                      fontSize: 15),
                                   textAlign: TextAlign.justify,
                                 ),
                                 Text(
                                   fixture.eventAwayTeam. length > 21 ? '${fixture.eventAwayTeam.substring(0, 19)}...' : fixture.eventAwayTeam,
                                   style: const TextStyle(
-                                    fontFamily: "Poppins",
+                                    
                                     fontSize: 15,
                                   ),
                                   textAlign: TextAlign.justify,
@@ -117,7 +118,7 @@ class FixtureCard extends StatelessWidget {
                                     .split("-")
                                     .elementAt(0),
                                 style: const TextStyle(
-                                    fontFamily: "Poppins", fontSize: 15),
+                                     fontSize: 15),
                                 textAlign: TextAlign.center,
                               ),
                               Text(
@@ -126,7 +127,7 @@ class FixtureCard extends StatelessWidget {
                                     .elementAt(1)
                                     .replaceFirst(" ", ""),
                                 style: const TextStyle(
-                                    fontFamily: "Poppins", fontSize: 15),
+                                     fontSize: 15),
                                 textAlign: TextAlign.center,
                               ),
                             ],
@@ -152,11 +153,11 @@ class FixtureCard extends StatelessWidget {
                                         .toString()
                                         .substring(0, 10),
                                     style: const TextStyle(
-                                        fontFamily: "Poppins", fontSize: 15)),
+                                         fontSize: 15)),
                                 Text(
                                   setStatus(),
                                     style: const TextStyle(
-                                        fontFamily: "Poppins", fontSize: 15)),
+                                        fontSize: 15)),
                               ],
                             ))
                       ],
