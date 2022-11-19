@@ -26,24 +26,32 @@ class HomeView extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocBuilder<BottomNavigationBloc,int>(
-        builder: (context, state) {
-          switch (state) {
-            case 0:
-              return const FixturesPage();
-            case 1:
-              return const TeamScreen();
-            case 2:
-              return const LeagueScreen();
-            default:
-              return const Center(child: Text('Fixtures'));
-          }
-        },
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          fontFamily: "Poppins",
           
-
+        ),
+      home: Scaffold(
+        
+        body: BlocBuilder<BottomNavigationBloc,int>(
+          builder: (context, state) {
+            switch (state) {
+              case 0:
+                return const FixturesPage();
+              case 1:
+                return const TeamScreen();
+              case 2:
+                return const LeagueScreen();
+              default:
+                return const Center(child: Text('Fixtures'));
+            }
+          },
+            
+    
+        ),
+        bottomNavigationBar:  const CustomBottomNavigationBar(),
       ),
-      bottomNavigationBar:  const CustomBottomNavigationBar(),
     );
   }
 }

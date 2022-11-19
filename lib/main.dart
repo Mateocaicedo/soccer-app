@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         title: 'Soccer app',
         theme: ThemeData(
           fontFamily: "Poppins",
-          primarySwatch: Colors.blueGrey,
+          
         ),
         home: const HomeScreen(),
       ),

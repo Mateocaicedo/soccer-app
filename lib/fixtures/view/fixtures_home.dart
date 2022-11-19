@@ -9,6 +9,10 @@ class FixturesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          fontFamily: "Poppins",
+          
+        ),
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 6,
@@ -23,7 +27,7 @@ class FixturesPage extends StatelessWidget {
               ),
               SizedBox(
                 width: 10,
-              ),
+              ),  
               Text(
                 'FIXTURES',
                 style: TextStyle(color: AppColors.secondaryColor),
@@ -42,20 +46,16 @@ class FixturesPage extends StatelessWidget {
                   Tab(text: 'Bundesliga'),
                   Tab(text: 'Liga BetPlay'),
                   Tab(text: 'FIFA World Cup'),
-                  
                 ]),
           ),
           body: const TabBarView(
             children: [
-              
               AllLeaguesPage(leagueId: 152),
               AllLeaguesPage(leagueId: 302),
               AllLeaguesPage(leagueId: 207),
-
               AllLeaguesPage(leagueId: 175),
               AllLeaguesPage(leagueId: 120),
               AllLeaguesPage(leagueId: 28),
-              
             ],
           ),
         ),

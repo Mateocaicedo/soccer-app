@@ -8,6 +8,7 @@ import 'package:soccer_app/teams/view/screens/premier_screen.dart';
 import 'package:soccer_app/teams/view/screens/seriea_screen.dart';
 import 'package:soccer_app/teams/view/screens/worldcup_screen.dart';
 import 'package:soccer_app/teams/view/screens/league_screen.dart';
+import 'package:soccer_app/resources/colors.dart';
 
 
 class TeamScreen extends StatefulWidget {
@@ -30,29 +31,38 @@ class _TeamScreenState extends State<TeamScreen> {
 
   var selectedLeague = 'Premier League';
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 25, 52, 99),
-          shape: const Border(bottom: BorderSide(color: Colors.amber, width: 2)),
-          title: Row(children: const [
+
+  Widget _buildTitle(){
+    return Row(children: const [
             Icon(
               Icons.sports_soccer_sharp,
-              color: Colors.amber,
+              color: AppColors.secondaryColor,
             ),
             SizedBox(
               width: 10,
             ),
             Text(
               'TEAMS',
-              style: TextStyle(color: Colors.amber),
+              style: TextStyle(color: AppColors.secondaryColor),
             ),
-          ]),
+          ]);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+          fontFamily: "Poppins",
+          
         ),
-        backgroundColor: const Color.fromARGB(255, 25, 52, 99),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: AppColors.primaryColor,
+          shape: const Border(bottom: BorderSide(color: AppColors.secondaryColor, width: 2)),
+          title: _buildTitle()
+        ),
+        backgroundColor: AppColors.primaryColor,
         body: Container(
           padding: const EdgeInsets.all(20),
           child: Column(
@@ -65,39 +75,53 @@ class _TeamScreenState extends State<TeamScreen> {
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
               const SizedBox(height: 15),
-              // if (selectedLeague == 'Premier League')
-              //         LeaguesScreen(leagueId: 152)
-              // else if (selectedLeague == 'World Cup')
-              //        LeaguesScreen(leagueId: 28)
-              // else if (selectedLeague == 'La Liga')
-              //        LeaguesScreen(leagueId: 302)
-              // else if (selectedLeague == 'Serie A')
-              //   const SerieAScreen()
-              // else if (selectedLeague == 'Bundesliga')
-              //   const BundesligaScreen()
-              // else if (selectedLeague == 'Liga BetPlay')
-              //   const LigaBetPlayScreen()
-              // else
-              //   const PremierScreen()
-              if (selectedLeague == 'Premier League')
-                const PremierScreen()
-              else if (selectedLeague == 'World Cup')
-                const WorldCupScreen()
-              else if (selectedLeague == 'La Liga')
-                const LaLigaScreen()
-              else if (selectedLeague == 'Serie A')
-                const SerieAScreen()
-              else if (selectedLeague == 'Bundesliga')
-                const BundesligaScreen()
-              else if (selectedLeague == 'Liga BetPlay')
-                const LigaBetPlayScreen()
-              else
-                const PremierScreen()
+              //_returnScreen(),
+
+              if(selectedLeague == 'Premier League')
+                const PremierScreen(),
+              if(selectedLeague == 'World Cup')
+                const WorldCupScreen(),
+              if(selectedLeague == 'La Liga')
+                const LaLigaScreen(),
+              if(selectedLeague == 'Serie A')
+                const SerieAScreen(),
+              if(selectedLeague == 'Bundesliga')
+                const BundesligaScreen(),
+              if(selectedLeague == 'Liga BetPlay')
+                const LigaBetPlayScreen(),
+              
+              
             ],
           ),
         ),
       ),
     );
+  }
+
+  Widget _returnScreen(){
+    if (selectedLeague == 'Premier League') {
+      
+      return const LeaguesScreen(leagueId: 152);
+    } else if (selectedLeague == 'World Cup') {
+      
+      return const LeaguesScreen(leagueId: 28);
+    } else if (selectedLeague == 'La Liga') {
+      
+      return const LeaguesScreen(leagueId: 302);
+    } else if (selectedLeague == 'Serie A') {
+
+      
+      return const LeaguesScreen(leagueId: 207);
+    } else if (selectedLeague == 'Bundesliga') {
+      
+      return const LeaguesScreen(leagueId: 175);
+    } else if (selectedLeague == 'Liga BetPlay') {
+      
+      return const LeaguesScreen(leagueId: 120);
+    } else {
+      
+      return const  LeaguesScreen(leagueId: 152);
+    }
   }
 
   List<DropdownMenuItem> _dropdownItems() {
@@ -116,6 +140,8 @@ class _TeamScreenState extends State<TeamScreen> {
       if (league.keys.first != selectedLeague) {
         setState(() {
           selectedLeague = league.keys.first;
+          _returnScreen();
+          
         });
       }
     } catch (error) {
@@ -124,6 +150,8 @@ class _TeamScreenState extends State<TeamScreen> {
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
   }
+
+  
 
   Widget _dropdownButton() {
     return DropdownButtonFormField<dynamic>(

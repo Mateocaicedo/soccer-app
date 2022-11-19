@@ -12,7 +12,6 @@ class LeagueState{
   });
 
   final LeaguesStatus status;
-  // League premierLeague = League(leagueKey: "152", leagueName: "Premier League", countryKey: "44", countryName: "England", countryLogo: "https://apiv2.allsportsapi.com/logo/logo_country/44_england.png", leagueLogo: "https://apiv2.allsportsapi.com/logo/logo_leagues/152_premier-league.png");
   
 
   List<League> leagues;

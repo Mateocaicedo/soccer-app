@@ -1,4 +1,3 @@
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soccer_app/blocs/bloc_teams/teams_cubit.dart';
 import 'package:repository/repository.dart';
@@ -22,25 +21,18 @@ class LeaguesScreen extends StatelessWidget {
   }
 }
 
-class LeagueView extends StatefulWidget {
+class LeagueView extends StatelessWidget {
   const LeagueView({super.key});
 
   @override
-  State<LeagueView> createState() => _LeagueViewState();
-}
-
-class _LeagueViewState extends State<LeagueView> {
-  @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Scaffold(
-        
-        body: _buildBlocBuilder()
-      ),
-    );
+      child: _buildBlocBuilder()
+      );
+    
   }
 
-  Widget _buildGridView(List<Team> teams) {
+  Widget _buildGridViewBuilder(List<Team> teams) {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         mainAxisSpacing: 8.0,
@@ -63,7 +55,7 @@ class _LeagueViewState extends State<LeagueView> {
             return const Center(
                 child: CircularProgressIndicator(color: Colors.white));
           case TeamsStatus.success:
-            return _buildGridView(state.teams);
+            return _buildGridViewBuilder(state.teams);
 
           case TeamsStatus.failure:
             return const EmptyState(message: "There are no teams",);
