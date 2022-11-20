@@ -1,7 +1,6 @@
 # Welcome to Socer APP!
 
- Hi! In this app you are able to see all characters form the ricky and morthy serie, you also are able to see each episode where the character appears.
-
+ Hi! In this app you are able to see the best soccer leagues in the world, the soccer players, the top scorers in each league, the playeres of each team. We hope you enjoy this APP!
 ## Built with
 
 - Flutter
