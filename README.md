@@ -1,16 +1,20 @@
-# soccer_app
+# Welcome to Socer APP!
 
-A new Flutter project.
+ Hi! In this app you are able to see all characters form the ricky and morthy serie, you also are able to see each episode where the character appears.
 
-## Getting Started
+## Built with
 
-This project is a starting point for a Flutter application.
+- Flutter
+- Bloc and Cubit
+- All Sports API [here](https://allsportsapi.com/)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Class Diagram
+<img src="assets/class_diagram.jpg" alt="Diagram"/>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Mockup
+<img src="assets/wireframe.png" alt="Mockup"/>
+
+## Contributing
+Mateo Caicedo & Johan Ramirez
