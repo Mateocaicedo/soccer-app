@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:soccer_app/resources/colors.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soccer_app/widgets/state_empty.dart';
 import 'package:soccer_app/blocs/bloc_leagues/league_cubit.dart';
@@ -94,6 +94,7 @@ class _LeagueViewState extends State<LeagueView> {
 
         return ListTile(
           leading: CircleAvatar(
+            backgroundColor: Colors.white,
             backgroundImage: NetworkImage(
               league.leagueLogo,
             ),
@@ -117,7 +118,7 @@ class _LeagueViewState extends State<LeagueView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 25, 52, 99),
+        backgroundColor: AppColors.primaryColor,
         appBar: AppBar(
           // leading: _isSearching ? const BackButton(color: Color.fromARGB(255, 80, 44, 44)) : Container(),
           title: _isSearching
@@ -126,21 +127,21 @@ class _LeagueViewState extends State<LeagueView> {
                   children: const [
                     Icon(
                       Icons.emoji_events,
-                      color: Colors.amber,
+                      color: AppColors.secondaryColor,
                     ),
                     SizedBox(
                       width: 10,
                     ),
                     Text(
                       'LEAGUES',
-                      style: TextStyle(color: Colors.amber),
+                      style: TextStyle(color: AppColors.secondaryColor),
                     ),
                   ],
                 ),
           backgroundColor: const Color.fromARGB(255, 25, 52, 99),
           actions: _buildAppBarActions(),
           shape:
-              const Border(bottom: BorderSide(color: Colors.amber, width: 2)),
+              const Border(bottom: BorderSide(color: AppColors.secondaryColor, width: 2)),
         ),
         body: _buildBlocWidget());
   }

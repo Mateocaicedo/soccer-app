@@ -44,7 +44,7 @@ class HomeView extends StatelessWidget {
               case 2:
                 return const LeagueScreen();
               default:
-                return const Center(child: Text('Fixtures'));
+                return const Center(child: Text(''));
             }
           },
             
