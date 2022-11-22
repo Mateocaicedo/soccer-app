@@ -25,7 +25,7 @@ class Service {
   const Service();
 
   final String _baseUrl = 'https://apiv2.allsportsapi.com/football/';
-  final String _apiKey = '&APIkey=9376347fe806883c7044f0209570d2b0601453cf5d3599dabb7ab850e719b046';
+  final String _apiKey = '&APIkey=fa5d207882a917266ed3272aeb1a3750b4041fdd1bfb3c5bedfdd4e13f4b88d0';
 
     
   Future<List<League>> getLeagues() async {

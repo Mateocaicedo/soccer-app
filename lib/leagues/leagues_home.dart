@@ -83,6 +83,8 @@ class _LeagueViewState extends State<LeagueView> {
   }
 
   Widget _buildListViewBuilder() {
+    //create a widget refresh indicator to refresh the list
+    
     return ListView.builder(
       itemCount: _searchController.text.isEmpty
           ? _leagues.length
