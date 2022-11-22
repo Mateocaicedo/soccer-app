@@ -1,7 +1,11 @@
 part of 'league_cubit.dart';
 
+
+//create a enum for the status of the leagues
 enum LeaguesStatus {loading, success, failure }
 
+
+//create a class for the state of the leagues
 class LeagueState{
   LeagueState({
     

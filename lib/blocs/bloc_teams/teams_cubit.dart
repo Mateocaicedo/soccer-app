@@ -3,14 +3,16 @@ import 'package:repository/repository.dart';
 import 'package:repository/src/models/team.dart';
 part 'teams_state.dart';
 
-
+//create a cubit for teams
 class TeamsCubit extends Cubit<TeamsState> {
   TeamsCubit(this.teams) : super(TeamsState());
 
   final Repository teams;
   
-
+  //get teams by league id
   Future<void> getTeams(leagueID) async {
+
+    //emit state
     emit(state.copyWith(status: TeamsStatus.loading));
     try {
       final teams = await this.teams.teams(leagueID);

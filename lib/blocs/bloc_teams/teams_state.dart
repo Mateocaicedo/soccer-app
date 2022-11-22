@@ -1,7 +1,10 @@
 part of 'teams_cubit.dart';
 
+//create enum for teams status
 enum TeamsStatus { loading, success, failure }
 
+
+//create a class for teams state
 class TeamsState {
   TeamsState({
     this.status = TeamsStatus.loading,

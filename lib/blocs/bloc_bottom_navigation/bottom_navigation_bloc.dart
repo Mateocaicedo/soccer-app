@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 
 part 'bottom_navigation_event.dart';
 
-
+//create a bloc for the bottom navigation bar
 class BottomNavigationBloc extends Bloc<BottomNavigationEvent, int> {
   BottomNavigationBloc() : super(0) {
 

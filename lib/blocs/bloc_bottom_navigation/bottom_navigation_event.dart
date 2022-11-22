@@ -1,5 +1,7 @@
 part of 'bottom_navigation_bloc.dart';
 
+
+//create a bottom navigation event class that extends Equatable
 abstract class BottomNavigationEvent extends Equatable {
   const BottomNavigationEvent();
 

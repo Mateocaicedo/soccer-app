@@ -1,7 +1,10 @@
 part of 'topscorers_cubit.dart';
 
+//create enum for topscorers status
 enum TopScorersStatus {loading, success, failure }
 
+
+//create a class for topscorers state
 class TopscorersState extends Equatable {
   const TopscorersState({
     this.topscorers = const <TopScorers>[],
@@ -11,7 +14,7 @@ class TopscorersState extends Equatable {
   final TopScorersStatus status;
   final List<TopScorers> topscorers;
 
-
+  
   TopscorersState copyWith({
     TopScorersStatus? status,
     List<TopScorers>? topscorers,

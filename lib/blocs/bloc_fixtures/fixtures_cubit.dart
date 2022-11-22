@@ -5,12 +5,18 @@ import 'package:repository/repository.dart';
 
 part 'fixtures_state.dart';
 
+
+//create a cubit for the fixtures
 class FixturesCubit extends Cubit<FixturesInitial> {
   FixturesCubit(this.fixtures) : super(FixturesInitial());
 
   final Repository fixtures;
 
+  //get the fixtures for a league
   Future<void> getFixtures(int leagueId) async {
+
+    //emit the state 
+
     emit(state.copyWith(status: FixturesStatus.loading));
     try {
       final fix = await fixtures.fixtures(leagueId);
