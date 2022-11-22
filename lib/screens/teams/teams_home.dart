@@ -10,7 +10,7 @@ import 'package:soccer_app/screens/teams/view/screens/worldcup_screen.dart';
 
 import 'package:soccer_app/resources/colors.dart';
 
-
+//create a team screen that display a dropdown button to select a league and a grid view to display the teams
 class TeamScreen extends StatefulWidget {
   const TeamScreen({super.key});
 
@@ -99,7 +99,7 @@ class _TeamScreenState extends State<TeamScreen> {
   }
 
   
-
+  //list of dropdown items
   List<DropdownMenuItem> _dropdownItems() {
     return _leaguesMap.keys
         .map((leagues) => DropdownMenuItem(
@@ -111,6 +111,8 @@ class _TeamScreenState extends State<TeamScreen> {
         .toList();
   }
 
+
+  //set state to change the dropdown value
   void _getLeague(Map<String, int> league) async {
     try {
       if (league.keys.first != selectedLeague) {
@@ -128,7 +130,7 @@ class _TeamScreenState extends State<TeamScreen> {
   }
 
   
-
+  //create a dropdown button to select a league
   Widget _dropdownButton() {
     return DropdownButtonFormField<dynamic>(
       iconSize: 30,
