@@ -13,7 +13,7 @@
 
 
 ## Mockup
-<img src="assets/all_screens.png alt="Mockup"/>
+<img src="assets/all_screens.png" alt="Mockup"/>
 
 ## Contributing
 Mateo Caicedo & Johan Ramirez
