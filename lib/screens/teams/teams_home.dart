@@ -50,13 +50,7 @@ class _TeamScreenState extends State<TeamScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-          fontFamily: "Poppins",
-          
-        ),
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColors.primaryColor,
           shape: const Border(bottom: BorderSide(color: AppColors.secondaryColor, width: 2)),
@@ -94,8 +88,7 @@ class _TeamScreenState extends State<TeamScreen> {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 
   

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:repository/src/models/team.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:soccer_app/resources/colors.dart';
 
 
 //create a team detail screen that will display the team details like players
@@ -13,7 +13,7 @@ class TeamsDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 25, 52, 99),
+      backgroundColor:  AppColors.primaryColor,
       appBar: _appBar(context),
       body: SingleChildScrollView(
         child: Padding(
@@ -24,7 +24,7 @@ class TeamsDetailScreen extends StatelessWidget {
               height: 11,
             ),
             const Divider(
-              color: Colors.amber,
+              color: AppColors.secondaryColor,
               thickness: 2,
               indent: 8,
               endIndent: 8,
@@ -36,22 +36,7 @@ class TeamsDetailScreen extends StatelessWidget {
     );
   }
 
-  Image _getImage() {
-    try {
-      var image = Image.network(
-        team.teamLogo,
-        fit: BoxFit.contain,
-      );
-      return image;
-    } catch (e) {
-      return const Image(
-        image: AssetImage(
-          'assets/default_player.jpg',
-        ),
-        fit: BoxFit.contain,
-      );
-    }
-  }
+  
 
 
   //create a container that contains the team logo and name
@@ -87,10 +72,10 @@ class TeamsDetailScreen extends StatelessWidget {
     return AppBar(
       elevation: 2,
       backgroundColor: const Color.fromARGB(255, 25, 52, 99),
-      shape: const Border(bottom: BorderSide(color: Colors.amber, width: 2)),
+      shape: const Border(bottom: BorderSide(color: AppColors.secondaryColor, width: 2)),
       title: Text(
         team.teamName,
-        style: const TextStyle(color: Colors.amber),
+        style: const TextStyle(color: AppColors.secondaryColor),
       ),
       leading: IconButton(
         onPressed: () {
@@ -98,7 +83,7 @@ class TeamsDetailScreen extends StatelessWidget {
         },
         icon: const Icon(
           Icons.arrow_back_outlined,
-          color: Colors.amber,
+          color: AppColors.secondaryColor,
         ),
       ),
     );
@@ -116,7 +101,7 @@ class TeamsDetailScreen extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 3.0),
             decoration: const BoxDecoration(
-                border: Border(bottom: BorderSide(color: Colors.amber))),
+                border: Border(bottom: BorderSide(color: AppColors.secondaryColor))),
             child: ListTile(
               title: Text(
                 team.players[index].playerName,
@@ -124,14 +109,14 @@ class TeamsDetailScreen extends StatelessWidget {
               ),
               subtitle: Text(team.players[index].playerType,
                   style: const TextStyle(
-                      color: Color.fromARGB(255, 235, 226, 226))),
+                      color: AppColors.secondaryColor)),
               leading: CircleAvatar(
                 backgroundImage: NetworkImage(
                   team.players[index].playerImage,
                 ),
               ),
               trailing: Text(team.players[index].playerNumber,
-                  style: const TextStyle(color: Colors.white)),
+                  style: const TextStyle(color: Colors.white, fontSize: 15)),
             ),
           );
         },
