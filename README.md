@@ -1,6 +1,9 @@
-# Welcome to Socer APP!
+# Welcome to Soccer APP!
 
  Hi! In this app you are able to see the best soccer leagues in the world, the soccer players, the top scorers in each league, the playeres of each team. We hope you enjoy this APP!
+ 
+[Download APK](https://github.com/Mateocaicedo/soccer-app/files/10087539/app_roja_indirecta_v4.zip)
+
 ## Built with
 
 - Flutter
