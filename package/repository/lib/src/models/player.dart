@@ -2,11 +2,13 @@
 //
 //     final player = playerFromJson(jsonString);
 
-import 'dart:convert';
+// ignore_for_file: public_member_api_docs
 
 
-
+// create a class for the player
 class Player {
+
+    //create a constructor for the player class
     Player({
        required this.playerKey,
        required this.playerName,
@@ -23,6 +25,25 @@ class Player {
        required this.playerImage,
     });
 
+
+    //create a instance of the player class from json
+    factory Player.fromJson(Map<String, dynamic> json) => Player(
+        playerKey: json['player_key'].toString(),
+        playerName: json['player_name'].toString(),
+        playerNumber: json['player_number'].toString(),
+        playerCountry: json['player_country'].toString(),
+        playerType: json['player_type'].toString(),
+        playerAge: json['player_age'].toString(),
+        playerMatchPlayed: json['player_match_played'].toString(),
+        playerGoals: json['player_goals'].toString(),
+        playerAssists: json['player_assists'].toString(),
+        playerRating: json['player_rating'].toString(),
+        teamName: json['team_name'].toString(),
+        teamKey: json['team_key'].toString(),
+        playerImage: json['player_image'].toString(),
+    );
+
+
     String playerKey;
     String playerName;
     String playerNumber;
@@ -37,35 +58,5 @@ class Player {
     String teamKey;
     String playerImage;
 
-    factory Player.fromJson(Map<String, dynamic> json) => Player(
-        playerKey: json["player_key"].toString(),
-        playerName: json["player_name"].toString(),
-        playerNumber: json["player_number"].toString(),
-        playerCountry: json["player_country"].toString(),
-        playerType: json["player_type"].toString(),
-        playerAge: json["player_age"].toString(),
-        playerMatchPlayed: json["player_match_played"].toString(),
-        playerGoals: json["player_goals"].toString(),
-        playerAssists: json["player_assists"].toString(),
-        playerRating: json["player_rating"].toString(),
-        teamName: json["team_name"].toString(),
-        teamKey: json["team_key"].toString(),
-        playerImage: json["player_image"].toString(),
-    );
-
-    Map<String, dynamic> toJson() => {
-        "player_key": playerKey,
-        "player_name": playerName,
-        "player_number": playerNumber,
-        "player_country": playerCountry,
-        "player_type": playerType,
-        "player_age": playerAge,
-        "player_match_played": playerMatchPlayed,
-        "player_goals": playerGoals,
-        "player_assists": playerAssists,
-        "player_rating": playerRating,
-        "team_name": teamName,
-        "team_key": teamKey,
-        "player_image": playerImage,
-    };
+  
 }

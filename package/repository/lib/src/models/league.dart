@@ -1,11 +1,10 @@
-import 'dart:convert';
+// ignore_for_file: public_member_api_docs
 
-// League leagueFromJson(String str) => League.fromJson(json.decode(str));
 
-// String leagueToJson(League data) => json.encode(data.toJson());
-
+//create a class for the league
 class League {
-    // ignore: public_member_api_docs
+    
+    //create a constructor for the league class
     League({
         required this.leagueKey,
         required this.leagueName,
@@ -15,13 +14,7 @@ class League {
         required this.countryLogo,
     });
 
-    String leagueKey;
-    String leagueName;
-    String countryKey;
-    String countryName;
-    String leagueLogo;
-    String countryLogo;
-
+    //create a instance of the league class from json
     factory League.fromJson(Map<String, dynamic> json) => League(
         leagueKey: json['league_key'].toString(),
         leagueName: json['league_name'].toString(),
@@ -31,14 +24,12 @@ class League {
         countryLogo: json['country_logo'].toString(),
     );
 
-     // ignore: public_member_api_docs
-     Map<String, dynamic> toJson() => {
-        'league_key': leagueKey,
-        'league_name': leagueName,
-        'country_key': countryKey,
-        'country_name': countryName,
-        'league_logo': leagueLogo,
-        'country_logo': countryLogo,
-    };
+    String leagueKey;
+    String leagueName;
+    String countryKey;
+    String countryName;
+    String leagueLogo;
+    String countryLogo;
+
    
 }

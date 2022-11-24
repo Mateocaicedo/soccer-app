@@ -1,7 +1,12 @@
+// ignore_for_file: public_member_api_docs
 
+import 'package:repository/src/models/league.dart';
+import 'package:repository/src/models/team.dart';
 
 
 class Fixtures {
+
+    //create a constructor for the fixtures class
     Fixtures({
         required this.eventKey,
         required this.eventDate,
@@ -22,7 +27,35 @@ class Fixtures {
         required this.leagueLogo,
         required this.eventTime,
     });
+    
 
+    //create a instance of the fixtures class from json
+    factory Fixtures.fromJson(Map<String, dynamic> json) => Fixtures(
+        eventKey: json['event_key'].toString(),
+        eventDate: DateTime.parse(json['event_date'].toString()),
+        eventTime: json['event_time'].toString(),
+        eventHomeTeam: json['event_home_team'].toString(),
+        homeTeamKey: json['home_team_key'].toString(),
+        eventAwayTeam: json['event_away_team'].toString(),
+        awayTeamKey: json['away_team_key'].toString(),
+        eventHalftimeResult: json['event_halftime_result'].toString(),
+        eventFinalResult: json['event_final_result'].toString(),
+        eventFtResult: json['event_ft_result'].toString(),
+        eventStatus: json['event_status'].toString(),
+        countryName: json['country_name'].toString(),
+        leagueName: json['league_name'].toString(),
+        leagueKey: json['league_key'].toString(),
+        eventStadium: json['event_stadium'].toString(),
+        homeTeamLogo: json['home_team_logo'].toString(),
+        awayTeamLogo: json['away_team_logo'].toString(),
+        leagueLogo: json['league_logo'].toString(),
+
+    );
+
+    late League league;
+    late Team homeTeam;
+    late Team awayTeam;
+    
     String eventKey;
     DateTime eventDate;
     String eventHomeTeam;
@@ -41,46 +74,6 @@ class Fixtures {
     String awayTeamLogo;
     String leagueLogo;
     String eventTime;
-    factory Fixtures.fromJson(Map<String, dynamic> json) => Fixtures(
-        eventKey: json["event_key"].toString(),
-        eventDate: DateTime.parse(json["event_date"].toString()),
-        eventTime: json["event_time"].toString(),
-        eventHomeTeam: json["event_home_team"].toString(),
-        homeTeamKey: json["home_team_key"].toString(),
-        eventAwayTeam: json["event_away_team"].toString(),
-        awayTeamKey: json["away_team_key"].toString(),
-        eventHalftimeResult: json["event_halftime_result"].toString(),
-        eventFinalResult: json["event_final_result"].toString(),
-        eventFtResult: json["event_ft_result"].toString(),
-        eventStatus: json["event_status"].toString(),
-        countryName: json["country_name"].toString(),
-        leagueName: json["league_name"].toString(),
-        leagueKey: json["league_key"].toString(),
-        eventStadium: json["event_stadium"].toString(),
-        homeTeamLogo: json["home_team_logo"].toString(),
-        awayTeamLogo: json["away_team_logo"].toString(),
-        leagueLogo: json["league_logo"].toString(),
 
-    );
-
-    Map<String, dynamic> toJson() => {
-        "event_key": eventKey,
-        "event_date": "${eventDate.year.toString().padLeft(4, '0')}-${eventDate.month.toString().padLeft(2, '0')}-${eventDate.day.toString().padLeft(2, '0')}",
-        "event_time": eventTime,
-        "event_home_team": eventHomeTeam,
-        "home_team_key": homeTeamKey,
-        "event_away_team": eventAwayTeam,
-        "away_team_key": awayTeamKey,
-        "event_halftime_result": eventHalftimeResult,
-        "event_final_result": eventFinalResult,
-        "event_ft_result": eventFtResult,
-        "event_status": eventStatus,
-        "country_name": countryName,
-        "league_name": leagueName,
-        "league_key": leagueKey,
-        "event_stadium": eventStadium,
-        "home_team_logo": homeTeamLogo,
-        "away_team_logo": awayTeamLogo,
-        "league_logo": leagueLogo,
-    };
+    
 }

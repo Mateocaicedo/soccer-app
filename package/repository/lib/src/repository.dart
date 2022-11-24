@@ -13,15 +13,17 @@ import 'package:repository/src/models/topscorers.dart';
 import 'package:service/service.dart';
 
 
-/// {@template repository}
-/// A Very Good Project created by Very Good CLI.
-/// {@endtemplate}
+// create a repository class
 class Repository {
-  /// {@macro repository}
+  
   Repository();
 
+
+  //instance of the service class
   final Service _service = const Service();
 
+
+  //create a method to get all leagues
   Future<List<League>> leagues() async {
 
     final leagues = await _service.getLeagues();
@@ -30,7 +32,7 @@ class Repository {
 
   }
 
-
+  //create a method to get a list of fixtures
    Future<List<Fixtures>> fixtures(int leagueID) async {
 
     final fixtures = await _service.getFixtures(leagueID);
@@ -40,6 +42,7 @@ class Repository {
   }
 
 
+  //create a method to get a list of teams
   Future<List<Team>> teams(int leagueID) async {
 
     final teams = await _service.getTeams(leagueID);
@@ -48,6 +51,8 @@ class Repository {
 
   }
 
+
+  //create a method to get a list of top scorers
   Future<List<TopScorers>> topscorers(int leagueID) async {
 
     final topscorers = await _service.getTopScorers(leagueID);
